@@ -52,11 +52,12 @@ class jerk(object):
 			print "dialog doesn't exist!"
 		
 #returns a jerk object
+#blame boots for the variable names
 def grab(dong):
 	dongRq = requests.get("http://jerkcity.com/json/" + str(dong) + ".json")
 	if dongRq.status_code == 404:
 		return "Post doesn't exist!"
 	else:
-		jsondong = dongRq.json()
-		jerkObj = jerk(jsondong)
-		return jerkObj
+		circumcised = dongRq.json()
+		nut = jerk(circumcised)
+		return nut

@@ -1,5 +1,4 @@
 import requests
-import urllib
 
 class jerk(object):
 	def __init__(self, episode):

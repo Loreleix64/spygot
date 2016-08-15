@@ -52,11 +52,11 @@ class jerk(object):
 			print "dialog doesn't exist!"
 		
 #returns a jerk object
-def grab(episode):
-	dong = requests.get("http://jerkcity.com/json/" + str(episode) + ".json")
-	if dong.status_code == 404:
+def grab(dong):
+	dongRq = requests.get("http://jerkcity.com/json/" + str(dong) + ".json")
+	if dongRq.status_code == 404:
 		return "Post doesn't exist!"
 	else:
-		jsondong = dong.json()
+		jsondong = dongRq.json()
 		jerkObj = jerk(jsondong)
 		return jerkObj

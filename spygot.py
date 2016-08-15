@@ -52,11 +52,11 @@ class jerk(object):
 			print "dialog doesn't exist!"
 		
 #returns a jerk object
-def tapSpigot(episode):
-	post = requests.get("http://jerkcity.com/json/" + str(episode) + ".json")
-	if post.status_code == 404:
+def grab(episode):
+	dong = requests.get("http://jerkcity.com/json/" + str(episode) + ".json")
+	if dong.status_code == 404:
 		return "Post doesn't exist!"
 	else:
-		jsonpost = post.json()
-		finished = jerk(jsonpost)
-		return finished
+		jsondong = dong.json()
+		jerkObj = jerk(jsondong)
+		return jerkObj
